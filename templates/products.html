@@ -1,0 +1,26 @@
+
+{% include 'header.html' %}
+
+
+
+<div class="container mt-4">
+    <div class="row">
+        {% for product in products %}
+        <div class="col col-md-3 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="{{product['thumbnail']}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{product['title']}}</h5>
+                    <p class="card-text">{{product['price']}} {{product['currency_id']}}</p>
+                    <a class="btn btn-success" href="{{product['permalink']}}">Comprar</a>
+                </div>
+                <img class="card-img-bottom" src="" alt="">
+            </div>
+        </div>
+
+{%endfor %}
+    </div>
+</div>
+
+
+{% include 'footer.html' %}
